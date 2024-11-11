@@ -80,3 +80,34 @@ function findMaxSumSubArray(nums) {
     }
     return globalMax;
 }
+
+
+// Find the common items in multiple arrays
+function commonItems(...arrays) {
+    if(arrays.length === 0) return []
+
+//filter the items from the first array
+    return arrays[0].filter((item) => arrays.every((array) => array.includes(item)))
+}
+
+// Flatten an array without using built in methods
+function flattenArray(arr) {
+    // Initialize an empty array to hold the flattened result
+    let result = [];
+  
+    // Loop through each element in the input array
+    for (let i = 0; i < arr.length; i++) {
+      let element = arr[i];
+  
+      // Check if the current element is an array
+      if (Array.isArray(element)) {
+        // If it's an array, recursively flatten it and concatenate the result
+        result = result.concat(flattenArray(element));
+      } else {
+        // If it's not an array, push the element directly to the result
+        result.push(element);
+      }
+    }
+  
+    return result;
+  }
