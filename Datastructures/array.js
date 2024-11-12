@@ -138,4 +138,23 @@ function flattenArray(arr) {
 
   groupGenres(songs)
 
-  // 
+  // Remove falsy values from an array
+
+  function removeFalsyValues(arr) {
+    const falsyValues = [0,'',false,null,undefined,NaN]
+    const truthyValues = arr.filter((item) => (!falsyValues.includes(item)))
+    return truthyValues
+  }
+
+ console.log( removeFalsyValues([1,2,0,"",5,false]))
+
+//  Find the Nth largest element in an array
+function NthLargest(arr,n) {
+  let arrayLength = arr.length 
+   if(n > arrayLength || typeof n !== 'number') return
+   
+   arr.sort((a,b) => b-a)
+   return arr[n-1]
+}
+
+console.log(NthLargest([20,50,100,60],20))
