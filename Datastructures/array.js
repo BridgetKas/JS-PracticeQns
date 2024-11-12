@@ -158,3 +158,28 @@ function NthLargest(arr,n) {
 }
 
 console.log(NthLargest([20,50,100,60],20))
+
+// 
+function sortByStringProperty(arr, property) {
+  return arr.sort((a, b) => {
+    const propA = a[property].toLowerCase(); // Convert to lowercase for case-insensitive comparison
+    const propB = b[property].toLowerCase();
+    if (propA < propB) {
+      return -1;
+    }
+    if (propA > propB) {
+      return 1;
+    }
+    return 0
+  })
+}
+
+const people = [
+  { name: "John", age: 25 },
+  { name: "Alice", age: 30 },
+  { name: "Bob", age: 22 },
+  { name: "Mike", age: 27 }
+];
+
+const sortedByName = sortByStringProperty(people, 'name');
+console.log(sortedByName);
