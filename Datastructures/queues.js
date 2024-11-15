@@ -24,3 +24,29 @@ function findBinary(n) {
 
     return result;
 }
+
+// Sort a queue
+function sortStack(stack) {
+    var tempStack = new Stack();
+    var value;
+
+    while (!stack.isEmpty()) {
+        value = stack.pop();
+        // If value is not none and larger, push it at the top of the temp_stack
+        if (tempStack.isEmpty() || value >= tempStack.getTop()) {
+            tempStack.push(value);
+        } else {
+            while (!tempStack.isEmpty() && value < tempStack.getTop()) {
+                stack.push(tempStack.pop());
+            }
+            // Place value as the smallest element in tempStack                
+            tempStack.push(value);
+        }
+    }
+        // Transfer from tempStack => stack
+    while (!tempStack.isEmpty()) {
+        stack.push(tempStack.pop());
+    }
+
+    return stack;
+}
