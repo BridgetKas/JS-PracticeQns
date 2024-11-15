@@ -50,3 +50,43 @@ function sortStack(stack) {
 
     return stack;
 }
+
+
+// Postfix expression using a stack
+
+function applyOperator(op, num1, num2) {
+    switch (op) {
+        case '+':
+            return num1 + num2;
+        case '-':
+            return num1 - num2;
+        case '*':
+            return num1 * num2;
+        case '/':
+            return Math.floor(num1 / num2); // Integer division
+        default:
+            return null;
+    }
+}
+
+function evaluatePostfix(exp) {
+    const stack = new Stack();
+    
+
+    for (let char of exp) {
+        if (!isNaN(char)) {
+            // Push numbers onto the stack
+            stack.push(parseInt(char));
+        } else {
+            // Operator encountered
+            // Pop top two numbers from stack
+            const right = stack.pop();
+            const left = stack.pop();
+            // Apply operator to operands and push result back to stack
+            const result = applyOperator(char, left, right);
+            stack.push(result);
+        }
+    }
+    // Final result is at the top of the stack
+    return stack.pop();
+}
