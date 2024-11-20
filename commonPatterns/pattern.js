@@ -48,4 +48,42 @@ function printInvertedTraingle(columns) {
     }
 }
 
-printInvertedTraingle(6)
+// printInvertedTraingle(6)
+
+// 
+
+function printT(n) {
+    for(let i=0;i<n;i++){
+        let output = " "
+        for(let j=0;j<n-i-1;j++) {
+            output += " "
+        }
+        for(let j=0;j<2*i+1;j++){
+            output += "*"
+        }
+        for(let j=0;j<n-i-1;j++) {
+            output += " "
+        }
+        console.log(output)
+    }
+}
+
+// printT(5)
+
+function printTi(n) {
+    for(let i=0;i<n;i++){
+        let output = " "
+        for(let j=0;j<i;j++) {
+            output += " "
+        }
+        for(let j=0;j< 2*n -(2*i+1);j++){
+            output += "*"
+        }
+        for(let j=0;j<i;j++) {
+            output += " "
+        }
+        console.log(output)
+    }
+}
+printT(5)
+printTi(5)
