@@ -103,13 +103,23 @@ function numbers(n) {
 
 // numbers(5)
 
+// function printAlphabet(n) {
+//     for(let i=0; i<n; i++){
+//         let output=""
+//         for(let j=0; j<=i; j++){
+//             output += String.fromCharCode(65 + j)
+//         }
+//         console.log (output)
+//     }
+// }
+printAlphabet(5)
+
 function printAlphabet(n) {
     for(let i=0; i<n; i++){
         let output=""
-        for(let j=0; j<=i; j++){
+        for(let j=0; j<n-i; j++){
             output += String.fromCharCode(65 + j)
         }
         console.log (output)
     }
 }
-printAlphabet(5)
