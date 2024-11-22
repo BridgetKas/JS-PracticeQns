@@ -85,5 +85,31 @@ function printTi(n) {
         console.log(output)
     }
 }
-printT(5)
-printTi(5)
+// printT(5)
+// printTi(5) 
+
+function numbers(n) {
+    let k =1;
+    for(let i=0; i<n; i++) {
+        let output = ""
+        for (let j=0; j<=i; j++) {
+            output += k
+            // k = k + 1
+            k++
+        }
+        console.log(output)
+    }
+}
+
+// numbers(5)
+
+function printAlphabet(n) {
+    for(let i=0; i<n; i++){
+        let output=""
+        for(let j=0; j<=i; j++){
+            output += String.fromCharCode(65 + j)
+        }
+        console.log (output)
+    }
+}
+printAlphabet(5)
