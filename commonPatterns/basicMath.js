@@ -17,6 +17,7 @@ function countDigits(n) {
 
 function reverseNumber(n) {
     let reversedNumber = 0
+    // Solution one
     // while(n>0) {
     //     lastDigit = n % 10
     //     console.log(lastDigit)
@@ -26,6 +27,7 @@ function reverseNumber(n) {
     // console.log('rev',+reversedNumber)
     // return Number(reversedNumber)
 
+    // Solution two
     while (n>0) {
         lastDigit = n % 10
         reversedNumber = (reversedNumber * 10) + lastDigit
@@ -34,4 +36,19 @@ function reverseNumber(n) {
     return reversedNumber
 }
 
-console.log(reverseNumber(7789000))
+// console.log(reverseNumber(7789000))
+
+// Check for palindromne
+function palindromneCheck(n) {
+    let duplicateNumber = n
+    let reversedNumber = 0
+
+    while (n>0) {
+        lastDigit = n % 10
+        reversedNumber = (reversedNumber * 10) + lastDigit
+        n= Math.floor(n/10)
+    }
+    return (reversedNumber === duplicateNumber) ? "True" :"False"
+}
+
+console.log (palindromneCheck(121))
