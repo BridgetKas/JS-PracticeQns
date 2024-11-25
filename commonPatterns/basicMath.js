@@ -51,4 +51,36 @@ function palindromneCheck(n) {
     return (reversedNumber === duplicateNumber) ? "True" :"False"
 }
 
-console.log (palindromneCheck(121))
+// console.log (palindromneCheck(121))
+
+// ArmStrong number is a number that is equal to the cuberoot of its digits for example
+
+function armStrong(n){
+    let duplicateNumber = n
+    let reversedNumber = 0
+
+    while (n>0) {
+        lastDigit = n % 10
+        reversedNumber = reversedNumber + (lastDigit*lastDigit*lastDigit)
+        n= Math.floor(n/10)
+    }
+    return (reversedNumber === duplicateNumber) ? "True" :"False"
+
+}
+
+// console.log(armStrong(371))
+
+function primeNumber(n) {
+    // Brute force
+    let count = 0
+
+    for (let i=1; i<=n ; i++) {
+        if(n % i === 0) {
+            count ++
+        }
+    }
+
+    return (count === 2) ? 'Prime number':"Not Prime Number"
+}
+
+console.log (primeNumber(1))
