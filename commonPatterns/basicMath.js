@@ -81,6 +81,22 @@ function primeNumber(n) {
     }
 
     return (count === 2) ? 'Prime number':"Not Prime Number"
+
+    // Optimized solution
+    
+    if(n === 1) {
+        return 'Not a prime number'
+    }
+    for (let i=1; i<= Math.sqrt(n) ; i++) {
+        if(n % i === 0) {
+            count ++
+        }
+        if(n % (n/i) === 0) {
+            count ++
+        }
+    }
+    return (count === 2) ? 'Prime number ye':"Not Prime Number"
+
 }
 
 console.log (primeNumber(1))
