@@ -112,14 +112,72 @@ function numbers(n) {
 //         console.log (output)
 //     }
 // }
-printAlphabet(5)
+// printAlphabet(5)
 
 function printAlphabet(n) {
     for(let i=0; i<n; i++){
         let output=""
-        for(let j=0; j<n-i; j++){
-            output += String.fromCharCode(65 + j)
+        for(let j=0; j<=i; j++){
+            output += String.fromCharCode(65 + i)
         }
         console.log (output)
     }
 }
+
+function printTriangleOfAlphabets(n) {
+    for(let i = 0; i<n; i++){
+        let output = ""
+        // spaces
+        for(let j=0; j<=n-i-1; j++) {
+            output += "*"
+        }
+
+        // alphabets
+        for(let j=0; j<2*i+1; j++) {
+            output += String.fromCharCode(65 + i)
+        }
+
+        // spaces
+        for(let j=0; j<=n-i-1; j++) {
+            output += "*"
+        }
+        console.log(output)
+    }
+}
+
+// printTriangleOfAlphabets(5)
+
+// Important question
+function printRightTriangle() {
+    const starChar = 'E'
+    const startCode = starChar.charCodeAt(0)
+
+    for(let i=0; i<5; i++) {
+        let row = ''
+        for(let j=i; j>=0;j--){
+            row += String.fromCharCode(startCode - j)
+        }
+        console.log(row)
+    }
+}
+
+printRightTriangle(5)
+
+// Print hollowSquare important question
+function printHollowSquare(size) {
+    for (let i = 0; i < size; i++) {
+        let row = '';
+        for (let j = 0; j < size; j++) {
+            // Print '*' for the boundary, otherwise print ' '
+            if (i === 0 || i === size - 1 || j === 0 || j === size - 1) {
+                row += '*';
+            } else {
+                row += ' ';
+            }
+        }
+        console.log(row); // Print each row
+    }
+}
+
+// Example usage:
+printHollowSquare(5); 
