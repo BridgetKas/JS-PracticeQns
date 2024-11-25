@@ -99,4 +99,33 @@ function primeNumber(n) {
 
 }
 
-console.log (primeNumber(1))
+// console.log (primeNumber(1))
+
+function divisors(n) {
+    const divisorsArray = []
+
+    // Brute force
+
+    for (let i=1; i<=n ; i++) {
+        if(n % i === 0) {
+            divisorsArray.push(i)
+        }
+    }
+    // return divisorsArray
+
+    // Optimized Solution
+    for (let i=1; i<= Math.sqrt(n) ; i++) {
+        if(n % i === 0) {
+            divisorsArray.push(i)
+        }
+        if(n % (n/i) === 0){
+            if( i !== (n/i)) {
+                divisorsArray.push((n/i))
+            }
+        }
+    }
+    return divisorsArray
+
+}
+
+console.log (divisors(36))
